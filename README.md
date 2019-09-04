@@ -6,8 +6,11 @@ TO INSTALL POSTGRESS ALONG WITH DJANGO:
 
 1. sudo apt-get update
 
+2. sudo apt-get upgrade
 
-2. sudo apt-get install python-pip python-dev libpq-dev postgresql postgresql-contrib
+3. sudo apt-get autoremove
+
+4. sudo apt-get install python-pip python-dev libpq-dev postgresql postgresql-contrib
 
 
 ### Go into the subdirectory python-bitcoin-blockchain-parser through the command line and run the following command :
@@ -15,7 +18,7 @@ TO INSTALL POSTGRESS ALONG WITH DJANGO:
 1. pip3 setup.py install
 
 
-###CREATING DATABASE IN POSTGRES:
+### CREATING DATABASE IN POSTGRES:
 
 Run Command :
 
@@ -29,7 +32,6 @@ Run Command :
 
 5. GRANT ALL PRIVILEGES ON DATABASE DATABASE_NAME TO PROJECT_USER;
 
-> DO NOT FORGET THE SEMICOLON
 
 TO EXIT THE POSTGRES SHELL
 
@@ -60,9 +62,7 @@ folder:
 
           'HOST':'localhost',
 
-          'PORT':'',
-
-          #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+          'PORT':''
 
       }
   }
@@ -76,17 +76,15 @@ folder:
 
 1. Change your directory to the django project folder from command line.
 
-2. python3 manage.py migrate --run-syncdb
+2. python3 manage.py makemigrations
 
-3. python3 manage.py createsuperuser
+3. python3 manage.py migrate
 
-4. set your username and password for Django-Admin
+4. python3 manage.py createsuperuser
 
-5. python3 manage.py makemigrations
-
-6. python3 manage.py migrate
-
-7. python3 manage.py runserver
+5. Set your username and password for Django-Admin
+ 
+6. python3 manage.py runserver
 
 
 ### Now open browser and type in the url field :  127.0.0.0:8000/run
